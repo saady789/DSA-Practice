@@ -3,56 +3,89 @@
 #include<stdlib.h>
 using namespace std;
 
-bool isPossible(int mid,vector<int> time,int days,int chaps){
-
-  int daysPtr = 1;
-  int sum = 0;
-  for(int i=0;i<time.size();i++){
-    if(sum + time[i] <= mid){
-      sum += time[i];
-    }
-    else {
-      daysPtr++;
-      if(daysPtr > days || time[i] > mid){return false;}
-      sum = time[i];
-    }}
-
-
-  return true;
-
-
-}
 
 
 int main() {
-  int n = 4;
-  vector<int> time = {2,2,3,3,4,4,1 };
-  int s = 0;
-  int e = 0;
-  int ans=-1;
-  for(int x:time) {
-    e += x;
+
+  vector<int> a = {9,9};
+  vector<int> b = {1,2,3};
+  vector<int> result;
+  int c = 0;
+  int n = a.size()-1;
+  int m = b.size()-1;
+  int mod;
+  int quot;
+  while(n>=0 && m>=0){
+    int temp = a[n] + b[m] + c;
+    if(temp>9){
+      mod = temp%10;
+      quot = temp/10;
+      c = quot;
+      result.push_back(mod);
+      
   }
-  int mid = s + (e-s)/2;
-  while(s<=e){
-    mid = s + (e-s)/2;
-    cout<<"Start:"<<s<<" End:"<<e<<" Mid:"<<mid<<endl;
-    if(isPossible(mid,time,n,time.size())) {
-      ans = mid;
-      cout<<"Answer found "<<ans<<endl;
-      e = mid - 1;
-    }
     else {
-      cout<<"Not a solution"<<endl;
-      s = mid+1;
+      c=0;
+      result.push_back(temp);
     }
-    cout<<"-----Next Iteration----"<<endl;
-    }
-  cout<<ans;
-  return 0;
+    n--;m--;
+
 }
+  if(n>=0){
+   while(n>=0){
+     int temp = a[n] + c;
+     if(temp>9){
+       mod = temp%10;
+       quot = temp/10;
+       c = quot;
+       result.push_back(mod);
+
+     }
+     else {
+       c=0;
+       result.push_back(temp);
+     }
+     n--;
+   }
     
+  }
+  if(m>=0){
+
+    while(m>=0){
+       int temp = b[m] + c;
+       if(temp>9){
+         mod = temp%10;
+         quot = temp/10;
+         c = quot;
+         result.push_back(mod);
+
+       }
+       else {
+         c=0;
+         result.push_back(temp);
+       }
+       m--;
+  }
+  }
+
+  int start = 0;
+  int end = result.size()-1;
+  while(start<=end){
+    int temp = result[start];
+    result[start]=result[end];
+    result[end]=temp;
+    start++;end--;
+  }
+
+  for(int x:result){
+    cout<<x<<" ";
+  }
+  cout<<endl;
+  cout<<"Size "<<result.size();
+
   
+    
+}
   
 
  
