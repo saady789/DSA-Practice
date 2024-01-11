@@ -1,20 +1,27 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 #include <limits.h>
+#include <string>
+#include <algorithm>  // Add this line for transform
 using namespace std;
-int main () {
-  vector<int> prices = {7,1,5,3,6,4};
-  int maxi = INT_MIN;
-  int sell = 1;
-  for(int i=0;i<sell;i++){
-      if(prices[sell]-prices[i]>maxi) {
-          maxi = prices[sell]-prices[i];
-        cout<<"Maxi is now "<<maxi<<endl;
-      }
-      sell++;i=0;
-      if(sell==prices.size()) break;
-  }
-  cout<<endl<<maxi;
 
-  
+int main() {
+    string s = "c1 O$d@eeD o1c";
+    int start = 0;
+    int end = s.length() - 1;
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+
+    while (start <= end) {
+        if (s[start] != s[end]) {
+            cout << "False";
+            break;
+        } else {
+            start++;
+            end--;
+        }
+    }
+
+    cout << "True";
+
+    return 0;
 }
