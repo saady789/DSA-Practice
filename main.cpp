@@ -6,22 +6,28 @@
 using namespace std;
 
 int main() {
-    string s = "c1 O$d@eeD o1c";
+    string s = "saad";
+    sort(s.begin(),s.end());
     int start = 0;
-    int end = s.length() - 1;
-    transform(s.begin(), s.end(), s.begin(), ::tolower);
-
-    while (start <= end) {
-        if (s[start] != s[end]) {
-            cout << "False";
-            break;
-        } else {
-            start++;
-            end--;
+  
+    char t = 'a';
+    int max = INT_MIN;
+    for(int i=1;i<s.length();i++){
+      if(s[i]==t){
+        
+      }
+      else{
+        if(i-start>max){
+          max = i-start;
+          t = s[i];
         }
+        start=i;
+        
+      }
     }
 
-    cout << "True";
-
-    return 0;
+  cout<<"Char is "<<t<<" and the max is "<<max;
+    
+    
+   
 }
