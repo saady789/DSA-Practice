@@ -6,27 +6,17 @@
 using namespace std;
 
 int main() {
-    string s = "saad";
-    sort(s.begin(),s.end());
-    int start = 0;
-  
-    char t = 'a';
-    int max = INT_MIN;
-    for(int i=1;i<s.length();i++){
-      if(s[i]==t){
-        
-      }
-      else{
-        if(i-start>max){
-          max = i-start;
-          t = s[i];
-        }
-        start=i;
-        
-      }
-    }
+   // sort(s1.begin(),s1.end());
+   string s1 = "ab";
+   string s2 = "eidboaoo";
+   sort(s2.begin(),s2.end());
+   sort(s1.begin(),s1.end());
 
-  cout<<"Char is "<<t<<" and the max is "<<max;
+   int res = s2.find(s1);
+   if(res==-1) cout<<"False";
+   else cout<<"True";
+    
+    
     
     
    
