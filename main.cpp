@@ -5,35 +5,57 @@
 #include <algorithm>  // Add this line for transform
 using namespace std;
 
-void solve(string str,vector<string> &answer,string output,int index){
-  //base case
-  if (index > str.size() - 1) {
-    if (!output.empty()) {  
-      answer.push_back(output);
-    }
-    return;
+void phone(string digits,string output,vector<string> &answer,vector<string> data,int index){
+  //basecase
+  if(index==digits.length()) {
+    answer.push_back(output);return;
   }
 
-
-  //recursive call
-  solve(str,answer,output,index+1);
-  output.push_back(str[index]);
-  solve(str,answer,output,index+1);
-
-
+  //processing + recursive calls
+  int d = digits[index] - '0';
+  if(d==7||d==9) {
+    output.push_back(data[d][0]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+    output.push_back(data[d][1]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+    output.push_back(data[d][2]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+    output.push_back(data[d][3]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+   
+  }
+  else {
+    output.push_back(data[d][0]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+    output.push_back(data[d][1]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+    output.push_back(data[d][2]);
+    phone(digits,output,answer,data,index+1);
+    output.pop_back();
+  }
+  
+  
 }
 
 int main() {
-  string str = "abc";
+  string digits = "23";
+  string output;
   vector<string> answer;
+  vector<string> data ={"a","b","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+  phone(digits,output,answer,data,0);
+  for(string i:answer){
+    cout<<i<<endl;
+  }
+
   
 
-  string output;
-  solve(str,answer,output,0);
-
-  for(string i:answer) {
-    cout<<"1: "<<i<<endl;
-  }
+ 
 
 
 }
