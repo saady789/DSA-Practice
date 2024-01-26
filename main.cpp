@@ -5,53 +5,49 @@
 #include <algorithm>  // Add this line for transform
 using namespace std;
 
-void phone(string digits,string output,vector<string> &answer,vector<string> data,int index){
-  //basecase
-  if(index==digits.length()) {
-    answer.push_back(output);return;
-  }
 
-  //processing + recursive calls
-  int d = digits[index] - '0';
-  if(d==7||d==9) {
-    output.push_back(data[d][0]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-    output.push_back(data[d][1]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-    output.push_back(data[d][2]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-    output.push_back(data[d][3]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-   
-  }
-  else {
-    output.push_back(data[d][0]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-    output.push_back(data[d][1]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-    output.push_back(data[d][2]);
-    phone(digits,output,answer,data,index+1);
-    output.pop_back();
-  }
-  
-  
-}
+class CircularQueue {
+public:
+    int *arr;
+    int front;
+    int back;
+    int size;
+
+    CircularQueue(int n) {
+        arr = new int[n];
+        front = 0;
+        back = 0;
+        size = n;
+    }
+
+    // Enqueues 'X' into the queue. Returns true if it gets pushed into the stack, and false otherwise.
+    bool enqueue(int value) {
+        if ((back + 1) % size == front) {
+            // Can't insert, the queue is full
+            return false;
+        } else {
+            arr[back] = value;
+            back = (back + 1) % size;
+            return true;
+        }
+    }
+
+    // Dequeues top element from queue. Returns -1 if the stack is empty, otherwise returns the popped element.
+    int dequeue() {
+        if (front == back) {
+            // Queue is empty
+            return -1;
+        } else {
+            int data = arr[front];
+            front = (front + 1) % size;
+            return data;
+        }
+    }
+};
 
 int main() {
-  string digits = "23";
-  string output;
-  vector<string> answer;
-  vector<string> data ={"a","b","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-  phone(digits,output,answer,data,0);
-  for(string i:answer){
-    cout<<i<<endl;
-  }
+  cout<<"Hello world";
+  
 
   
 
