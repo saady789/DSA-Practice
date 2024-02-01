@@ -1,0 +1,18 @@
+in a binary tree so there is a left and a right node for every parent node 
+
+following are the ways to traverse the tree 
+
+             1
+          3      5
+        7  11  17  N
+  
+level order traversal 
+reverse level order traversal 
+in order LNR
+pre order NLR
+post order LRN
+
+
+
+
+
