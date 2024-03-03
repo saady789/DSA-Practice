@@ -1,0 +1,8 @@
+heap is a complete binary tree with heap order property 
+complete means every binary tree is complete except the last level
+evey level is filed from the left side 
+the heap order property is of 2 types 
+min heap and max heap
+we can implement the heap using an array 
+so for every node i its left child will be 2*i and right child will be 2*i+1
+which points to parent at i/2 index;
