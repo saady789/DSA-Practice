@@ -1,0 +1,12 @@
+in c++ the maps are implemented using binary search trees
+the insertion time complexity is logn
+the erase function also has time complexity of logn
+
+we have unorederd map which have constant time complexity for insertion deletion and removal of the elemtns from the map it is implemented using hashing
+
+in a multi map the duplicated keys are allowed
+the time complexity is logn
+implemented by binary trees
+
+unorder multimap is implemented using hashes so the time complexity is 
+constant

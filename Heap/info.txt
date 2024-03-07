@@ -6,3 +6,21 @@ min heap and max heap
 we can implement the heap using an array 
 so for every node i its left child will be 2*i and right child will be 2*i+1
 which points to parent at i/2 index;
+
+insertion takes logn
+deletion only from the root
+replace the root node with the last node 
+after it propoagte the root node to its correct position
+deletion takes logn
+
+Heapify 
+in a complete binary tree the leaf index lies from n/2+1 to n index
+you can neglect the n/2+1 to n part 
+only process 1 to n/2 wala part
+
+you can use priority queue in stl for min max heap data structures
+
+
+too know if a binary tree is a heap you need to prove 2 things first that it is a complete binary tree and second it is a max heap
+
+
