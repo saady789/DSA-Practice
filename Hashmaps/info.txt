@@ -10,3 +10,6 @@ implemented by binary trees
 
 unorder multimap is implemented using hashes so the time complexity is 
 constant
+
+
+hash functions are a combinations of hashcode and compresssion algorithm
