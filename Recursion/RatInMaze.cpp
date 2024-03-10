@@ -1,48 +1,45 @@
-// class Solution {
-// public:
-//     void solve(vector<string> &answer, vector<vector<int>> &m, string &temp, int n, int r, int c) {
-//         // Base case
-//         if (r < 0 || r >= n || c < 0 || c >= n || m[r][c] == 0) {
-//             return;
-//         }
+void solve(vector<vector<int>>& arr,vector<string> &answer, string ans, int row, int col) {
+    // Base case
+    int rows = arr.size();
+    int cols = arr[0].size();
+    if (row < 0 || row >= rows || col < 0 || col >= cols || arr[row][col] == 0) {
+        return;
+    }
+    // Check if reached destination
+        if (row == rows-1 && col == cols-1) {
+            answer.push_back(ans);
+            return;
+        }
 
-//         // Check if reached destination
-//         if (r == n - 1 && c == n - 1) {
-//             answer.push_back(temp);
-//             return;
-//         }
 
-//         // Mark the current cell as visited
-//         m[r][c] = 0;
+    // Processing and recursive calls for Down, Left, Right, and Up directions
+    // Mark the current cell as visited
+        arr[row][col] = 0;
 
-//         // Recursive calls
-//         temp.push_back('D');
-//         solve(answer, m, temp, n, r + 1, c);
-//         temp.pop_back();
+        ans += "D";
+        solve(arr,answer, ans, row + 1, col);
+        ans.pop_back();
 
-//         temp.push_back('U');
-//         solve(answer, m, temp, n, r - 1, c);
-//         temp.pop_back();
+        ans += "L";
+        solve(arr,answer, ans, row, col - 1);
+        ans.pop_back();
 
-//         temp.push_back('R');
-//         solve(answer, m, temp, n, r, c + 1);
-//         temp.pop_back();
+        ans += "R";
+        solve(arr,answer, ans, row, col + 1);
+        ans.pop_back();
 
-//         temp.push_back('L');
-//         solve(answer, m, temp, n, r, c - 1);
-//         temp.pop_back();
+        ans +="U";
+        solve(arr,answer, ans, row - 1, col);
+        ans.pop_back();
 
-//         // Backtrack: Mark the current cell as unvisited
-//         m[r][c] = 1;
-//     }
 
-//     vector<string> findPath(vector<vector<int>> &m, int n) {
-//         vector<string> answer;
-//         if (m[0][0] == 0 || m[n - 1][n - 1] == 0) {
-//             return answer;
-//         }
-//         string output;
-//         solve(answer, m, output, n, 0, 0);
-//         return answer;
-//     }
-// };
+        // Backtrack: Mark the current cell as unvisited
+        arr[row][col] = 1;
+}
+
+vector<string> searchMaze(vector<vector<int>>& arr, int n) {
+    string ans;
+    vector<string> a;
+    solve(arr,a,"", 0, 0);
+    return a;
+}
