@@ -1,0 +1,18 @@
+graph is a type of data strucutre consisting of nodes and edges 
+node is an entity to store the data and edge is connecting the 2 nodes
+Degree of a node = number of edges connected either in/out for undirected graphs
+for directed graphs we have an indegree and an outdegree 
+total degree of a graph = 2*total number of edges in a graph 
+
+
+weighted graph means there are number of weight assigned to edges showing efforts to go from one node to another
+by default if no weights are assigned then we can say that it is 1 
+
+Path is a sequence of distinct nodes
+cyclic directed graph
+acyclic graph
+
+
+Types of representation 
+1) Adjacency Matrix 
+2) Adjacency List
