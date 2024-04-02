@@ -16,3 +16,12 @@ acyclic graph
 Types of representation 
 1) Adjacency Matrix 
 2) Adjacency List
+
+Topological sort: 
+only on DAG directed acyclic graph 
+it is never for undirected graphs 
+it is also never for cyclic graphs 
+it is the linear ordering of the vertices 
+KAHNS algorithm
+something before something 
+
