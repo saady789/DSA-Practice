@@ -25,3 +25,9 @@ it is the linear ordering of the vertices
 KAHNS algorithm
 something before something 
 
+Disjkstra Algorithm (Does not work for negative weights will give infinite distances)
+Priority Queue 
+Set 
+Queue
+
+
