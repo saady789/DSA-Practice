@@ -30,4 +30,13 @@ Priority Queue
 Set 
 Queue
 
+Bellman Ford Algorithm is used to find shortest path and can also be used if the edges are negative 
+works only for DG
+single source shortest path 
+Floyd Warshall Algo 
+finds shortest path between every pair of vertices 
+negative edges allowed but negative cycles are not allowed
+
+
+
 
