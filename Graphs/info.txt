@@ -37,6 +37,11 @@ Floyd Warshall Algo
 finds shortest path between every pair of vertices 
 negative edges allowed but negative cycles are not allowed
 
+Spanning Tree
+a tree that has n nodes and n-1 edges
+Minimum Spanning Tree is the spanning tree with minimum weights sum 
+
+
 
 
 
