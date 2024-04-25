@@ -42,6 +42,7 @@ a tree that has n nodes and n-1 edges
 Minimum Spanning Tree is the spanning tree with minimum weights sum 
 
 
+Disjoint Set
 
 
 
