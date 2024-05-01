@@ -43,6 +43,12 @@ Minimum Spanning Tree is the spanning tree with minimum weights sum
 
 
 Disjoint Set
+Union by Rank 
+Union by Size
+
+Kosarajru's Strongly Connected Components 
+only for directed graphs 
+
 
 
 
